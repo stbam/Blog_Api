@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body >
+    <h1 style="text-align:center ;" >Articles</h1>
+    <div class="container">
+       
+        <div class="article-container" style="display:flex; flex-wrap: wrap; justify-content: center; gap: 10px;">
+            <% articles.forEach(article => { %>
+                <div class="article" style="border: 2px solid black; width: 300px; padding: 10px; ">
+                    <p><%= article.title %></p>
+                    <p><%= article.author %></p>
+                    <p><%= article.description %></p>
+                    <p><%= article.createdAt %></p>
+                    <p><%= article.published %></p>
+                    <div>
+                    <a href="/article/individarticle">ffadsfasfa</a>
+
+                    <form action="/article/<%=article.id%>" method="post">
+                        <input type="hidden" name="_method" value="DELETE">
+                        <button type="submit">delete</button>
+                    </form>  
+                    <!--
+                        <form action="/article/659a7d5629cc59f2aeea696c" method="post">
+                            <input type="hidden" name="_method" value="DELETE">
+                            <button type="submit">Delete Article</button>
+                        </form>
+                    -->
+                </div>
+                </div>
+            <% }) %>
+        </div><a href="/article/create">Create article</a>
+    </div>
+
+
+</body>
+</html>
