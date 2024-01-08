@@ -5,24 +5,31 @@ exports.articleGet =  async(req,res)=>{
    res.render('individarticle')
 }
 exports.articleDelete = async(req,res)=>{
-    
-    await Article.findByIdAndDelete(req.params.id)
-    
-    const postId = req.params.id;
 
-    res.redirect('/');
     try {
         // Perform the deletion operation based on postId
         // ...
-        res.json({ message: 'Article deleted successfully', deletedArticleId: postId });
+        await Article.findByIdAndDelete(req.params.id)
+    
+        const postId = req.params.id;
+    
+     //   res.json({ message: 'Article deleted successfully', deletedArticleId: postId }); could be?
+      
     } catch (error) {
         console.error(error);
         res.status(500).json({ error: 'Internal Server Error' });
     }
+    res.redirect('/');
 }
-exports.articleUpdate = async(req,res)=>{
-   
-    res.send('article update')
+
+exports.articleUpdate = async(req,res,next)=>{
+    req.article = await Article.findById(req.params.id);
+    next();
+
+ /*   try{
+        const article = 
+    }
+    res.send('article update')*/
 }
 exports.articleCreate = async(req,res)=>{
     
