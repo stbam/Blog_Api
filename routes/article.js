@@ -28,26 +28,25 @@ router.put('/edit/:id',articleController.articleUpdate)
 router.post('/create',articleController.articleCreate)
 
 router.get('/edit',(req,res)=>{
-   // const article = req.article;
-   // res.render('edit',{article})
+    /*
+    const article = req.article;
+    console.log(article);
+    res.render('edit',{article})*/
    res.render('edit')
 })
 
 
 
-/*
-router.get('/edit/:id', (req, res) => {
+
+router.get('/article/individarticle', (req, res) => {
     // Assuming req.article is populated in articleUpdate middleware
     const article = req.article;
 
-    res.render('edit', { article });
+    res.render('_form_fields');
 });
 
-*/
 
-router.get('/',(req,res)=>{
 
-})
 router.get('/',(req,res)=>{
     res.render('article')
 })

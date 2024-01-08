@@ -12,12 +12,11 @@
             <h1>Edit</h1>
             
             <div>
-                <form action="/edit" method="POST">
-                    <% include('_form_fields') %>
-                </form>
-                
+                <form action="/edit/<%= article.id%>?_method=PUT" method="POST">
+                    <%- include('_form_fields') %>
+                </form>   
             </div>
          </div>
-
+         <a href="/">Homepage</a>
 </body>
 </html>

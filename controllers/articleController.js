@@ -2,10 +2,20 @@ const Article = require('../models/article')
 
 exports.articleGet =  async(req,res)=>{
    // res.send('article gotten!')
-   res.render('individarticle')
-}
-exports.articleDelete = async(req,res)=>{
+   const articles = await Article.findOne(req.params.id)
+    console.log(articles)
 
+   res.render('individarticle',{article:articles})
+}
+exports.articleGet =  async(req,res)=>{
+    // res.send('article gotten!')
+    const articles = await Article.findOne(req.params.id)
+     console.log(articles)
+ 
+    res.render('edit',{article:articles})
+ }
+ 
+exports.articleDelete = async(req,res)=>{
     try {
         // Perform the deletion operation based on postId
         // ...
