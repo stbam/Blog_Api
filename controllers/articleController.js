@@ -1,17 +1,18 @@
 const Article = require('../models/article')
 
-exports.articleGet =  async(req,res)=>{
+/*exports.articleGet =  async(req,res)=>{
    // res.send('article gotten!')
    const articles = await Article.findOne(req.params.id)
-    //console.log(articles)
-console.log("gsadsa")
+   
+
    res.render('individarticle',{article:articles})
-}
+}  */
+
 exports.articleGet =  async(req,res)=>{
     // res.send('article gotten!')
     const articles = await Article.findOne(req.params.id)
-    // console.log(articles)
- 
+   
+   //console.log(articles)
     res.render('edit',{article:articles})
  }
 
@@ -33,15 +34,23 @@ exports.articleDelete = async(req,res)=>{
 }
 
 exports.articleUpdate = async(req,res,next)=>{
-    console.log("test")
-   // req.article = await Article.findById(req.params.id);
-   let article = await Article.findById(req.params.id);
-   
-    console.log(article)
-    next();
+        let article = await Article.findById(req.params.id);
+    try{
+   // console.log("updating work! ")
+    // req.article = await Article.findById(req.params.id);
+        article.title="shrekify";
+        
+
+    console.log(article + 'update')
+    // next(); //this presents an error conflicts with redirect
+    article.save();
+    res.redirect('/')
+    }catch(error){
+        console.log(error)
+    }
 
  /*   try{
-        const article = 
+        const article = `
     }
     res.send('article update')*/
 }
