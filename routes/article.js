@@ -17,11 +17,12 @@ router.get('/create',(req,res)=>{
     res.render('article')
 })
 
-/*router.get('/individarticle',(req,res)=>{
+router.get('/individarticle',(req,res)=>{
     res.render('individarticle')
-})*/
+})
 
-router.get('/individarticle',articleController.articleGet)
+router.get('/edit',articleController.articleGet)
+//router.get('/individarticle',articleController.articleGet)
 
 router.put('/edit/:id',articleController.articleUpdate)
 
@@ -32,19 +33,21 @@ router.get('/edit',(req,res)=>{
     const article = req.article;
     console.log(article);
     res.render('edit',{article})*/
-   res.render('edit')
+  // res.render('edit')
 })
-
+//////////////////////////// ////////////////////////////////////////////////////////////////////////////////////
 
 
 
 router.get('/article/individarticle', (req, res) => {
     // Assuming req.article is populated in articleUpdate middleware
-    const article = req.article;
-
+   /* const article = req.article;
     res.render('_form_fields');
-});
+*/
 
+    res.render('individarticle')
+  
+});
 
 
 router.get('/',(req,res)=>{
