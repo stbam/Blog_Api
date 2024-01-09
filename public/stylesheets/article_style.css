@@ -1,12 +1,41 @@
 html{
    
 }
+
+.header{
+    display: flex; justify-content: space-between;padding: 20px; position: sticky; top:0px;background-color: white;
+}
+.header-right{
+    display: flex; gap: 10px;
+}
+.header-login{
+    padding: 5px; color: white; background-color: blueviolet; border-radius: 5px;cursor: pointer; user-select: none;
+}
+.header-left{
+    display: flex;  align-items: center; gap: 7px;
+}
+.arrowimg{
+    width:15px
+}
+.header-left_icon{
+    display: flex;  width:10px
+}
+.header-left_icon:hover  .nav_wrapper {
+    display: block;
+}
+.nav_wrapper{
+    background-color: beige; width: 100;display: none;
+}
+
+/**/
+
+
 h1{
     display: flex;
     justify-content: center;
     margin: 5px;
 }
-body{
+.outer-container{
     display: flex;
     justify-content: center;
     align-items: center;
@@ -21,7 +50,7 @@ body{
      align-items: center;
     gap: 5px;
 }
-img{
+.image{
     width: 1200px;
     height: 600px;
 }

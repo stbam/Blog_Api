@@ -9,9 +9,14 @@
     <title>Document</title>
 </head>
 <body>
+    <%- include('_nav_bar') %>
+    
     <h1>Individual Article!</h1>
     <h1><%= input.title %></h1>
   
+    <div class="outer-container">
+
+   
     <div class="article-container" style="display:flex; flex-wrap: wrap; justify-content: center; gap: 10px;">
         <div class="dates-author">
             <p><%=input.cleanedDate%></p>
@@ -20,7 +25,7 @@
   
           </div>
 
-        <img src="data:<%= input.image.contentType %>;base64,<%= input.image.data.toString('base64') %>" alt="">
+        <img class="image" src="data:<%= input.image.contentType %>;base64,<%= input.image.data.toString('base64') %>" alt="">
             <div class="article" >
             
              
@@ -36,7 +41,7 @@
             </div>
         
     </div>
-</div>
-    
+</div> 
+</div> 
 </body>
 </html>
