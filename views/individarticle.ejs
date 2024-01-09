@@ -4,20 +4,24 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/stylesheets/article_style.css">
+    
     <title>Document</title>
 </head>
 <body>
-    this is an individual article!
-    <h1 style="text-align:center ;">This is an individual Article</h1>
+    <h1>Individual Article!</h1>
+    <h1><%= input.title %></h1>
+  
     <div class="article-container" style="display:flex; flex-wrap: wrap; justify-content: center; gap: 10px;">
            
-            <div class="article" style="border: 2px solid black; width: 300px; padding: 10px; ">
-                <p><%= articles[0].title %></p>
-                <p><%= articles[0].author %></p>
-                <p><%= articles[0].description %></p>
-                <p><%= articles[0].createdAt %></p>
-                <p><%= articles[0].published %></p>
-                
+            <div class="article" >
+              
+                <p><%= input.author %></p>
+                <p><%= input.description %></p>
+                <p><%= input.createdAt %></p>
+                <p><%= input.published %></p>
+                <br>
+              
                 
             </div>
             <a href="/article/edit"><button>Update</button></a>

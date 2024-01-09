@@ -56,7 +56,7 @@
                     <p><%= article.createdAt %></p>
                     <p><%= article.published %></p>
                     <div>
-                    <a href="/article/individarticle">To</a>
+                    <a href="/article/individarticle/<%=article.id%>">Article</a>
 
                     <form action="/article/<%=article.id%>?_method=DELETE" method="post"> <!--?_method=DELETE-->
                         <input type="hidden" name="_method" value="DELETE">

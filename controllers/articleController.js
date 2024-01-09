@@ -10,7 +10,7 @@ const Article = require("../models/article");
 
 exports.articleGet = async (req, res) => {
   const articles = await Article.findOne(req.params.id);
-
+console.log('test')
   res.render("edit", { article: articles });
 };
 
@@ -60,7 +60,7 @@ exports.articleCreate = async (req, res) => {
     });
     // Save the article to the database
     const savedArticle = await article.save();
-    res.redirect('/')                           /*BAD FIX IT LATER*/
+ //   res.redirect('/')                           /*BAD FIX IT LATER*/
     res.render("article", { message: "new test", article: savedArticle });
     
   } catch (error) {
