@@ -48,21 +48,19 @@
        
         <div class="article-container">
             <% articles.forEach(article => { %>
+                <a href="/article/individarticle/<%=article.id%>">
                 <div class="article">
                     <img src="/assets/photo.png" alt="">
-                    <p><%= article.title %></p>
-                    <p><%= article.author %></p>
-                    <p><%= article.description %></p>
-                    <p><%= article.createdAt %></p>
-                    <p><%= article.published %></p>
-                    <div>
-                    <a href="/article/individarticle/<%=article.id%>">Article</a>
+                    <h4 class="sub-heading">Travel</h4>
+                    <div class="heading-content">
+                            <h4 class="title-content"><%=article.title%> </h4>
+                             <h5 class="subDescription-content"><%=article.subDescription%> </h5>
 
-                    <form action="/article/<%=article.id%>?_method=DELETE" method="post"> <!--?_method=DELETE-->
-                        <input type="hidden" name="_method" value="DELETE">
-                        <button type="submit">delete</button>
-                    </form>
-  
+                            <form action="/article/<%=article.id%>?_method=DELETE" method="post"> <!--?_method=DELETE-->
+                                <input type="hidden" name="_method" value="DELETE">
+                                <button type="submit">delete</button>
+                            </form>
+        
                     <!--
                         <form action="/article/659a7d5629cc59f2aeea696c" method="post">
                             <input type="hidden" name="_method" value="DELETE">
@@ -71,6 +69,7 @@
                     -->
                 </div>
                 </div>
+            </a>
             <% }) %>
         </div><a href="/article/create">Create article</a>
     </div>

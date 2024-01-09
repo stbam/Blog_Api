@@ -50,13 +50,14 @@ exports.articleUpdate = async (req, res, next) => {
   }
 };
 exports.articleCreate = async (req, res) => {
-  const { title, author, description, dateCreated } = req.body;
+  const { title, author, description, dateCreated,subDescription } = req.body;
   try {
     const article = new Article({
       title: title, // Set the title property
       author: author, // Add other properties as needed
       description: description,
       dateCreated: dateCreated,
+      subDescription:subDescription
     });
     // Save the article to the database
     const savedArticle = await article.save();

@@ -17,6 +17,10 @@ const articleSchema = new mongoose.Schema({
     type: String,
     required: true,
   },
+  subDescription:{
+    type: String,
+    required: true,
+  },
   published: {
     type: Boolean,
     default: false, //set default to faulse for unpublished posts
