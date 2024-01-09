@@ -1,6 +1,7 @@
 const express = require("express");
 const app = express();
 const Article = require("./models/article");
+const multer = require("multer");
 
 
 const mongoose = require("mongoose");
@@ -9,6 +10,7 @@ mongoose.connect("mongodb://localhost:27017/newdb");
 app.use('/stylesheets', express.static('public/stylesheets'));
 app.use('/assets', express.static('assets'));
 app.use(express.json());
+
 
 const methodOverride = require("method-override");
 app.use(methodOverride("_method"));

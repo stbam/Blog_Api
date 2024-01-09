@@ -13,20 +13,28 @@
     <h1><%= input.title %></h1>
   
     <div class="article-container" style="display:flex; flex-wrap: wrap; justify-content: center; gap: 10px;">
-           
+        <div class="dates-author">
+            <p><%=input.cleanedDate%></p>
+            <div style="font-size: 24px;">|</div>
+            <p>By:<%= input.author %></p>
+  
+          </div>
+
+        <img src="data:<%= input.image.contentType %>;base64,<%= input.image.data.toString('base64') %>" alt="">
             <div class="article" >
-              
-                <p><%= input.author %></p>
+            
+             
+           
                 <p><%= input.description %></p>
-                <p><%= input.createdAt %></p>
-                <p><%= input.published %></p>
+                
+              
                 <br>
               
-                
-            </div>
-            <a href="/article/edit"><button>Update</button></a>
+                <a href="/article/edit"><button>Update</button></a>
             
-            <a href="/">Go Back</a>
+                <a href="/">Go Back</a>
+            </div>
+        
     </div>
 </div>
     

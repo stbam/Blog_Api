@@ -10,11 +10,11 @@
 <body>
     fdas <!--title,author,dateCreated,description-->
     
-    <form action="/article/create" method="POST" >
+    <form action="/article/create" method="POST" enctype="multipart/form-data">
         <label for="title">Title</label>
         <input type="text" name="title" id="title"  required> <br>
     
-        <label for="author">Author</label>
+        <label for="author">Author</label>           
         <input type="text" name="author" id="author" required><br>
     
         <label for="dateCreated">Date</label>
@@ -23,11 +23,13 @@
         <label for="description">Description</label>
         <input type="text" name="description" id="description"   required><br>
         
-        <div class="sub_description">
-            <label for="subDescription">Sub Description</label>
-            <input type="text" name="subDescription" id="subDescription">
-        </div>
-        
+        <label for="subDescription">Sub Description</label>
+        <input type="text" name="subDescription" id="subDescription">
+
+        <label for="file">File:</label>
+        <input type="file" name="file" >
+      
+
         <button type="submit">Submit</button>
     </form>
     <a href="/">Homepage</a>

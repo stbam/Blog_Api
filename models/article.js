@@ -1,4 +1,5 @@
 const mongoose = require("mongoose");
+const { DateTime } = require("luxon");
 
 const articleSchema = new mongoose.Schema({
   title: {
@@ -12,10 +13,11 @@ const articleSchema = new mongoose.Schema({
   dateCreated: {   
     type: Date,
     default: Date.now(),
+    
   },
   description: {
     type: String,
-    required: true,
+    required: false,
   },
   subDescription:{
     type: String,
@@ -28,6 +30,13 @@ const articleSchema = new mongoose.Schema({
   image: {
     data: Buffer,
     contentType: String,
-  },
+  } 
+  
 });
+
+articleSchema.virtual("cleanedDate").get(function () {
+  return DateTime.fromJSDate(this.dateCreated).toISODate(); // format 'YYYY-MM-DD'
+});
+
+
 module.exports = mongoose.model("Article", articleSchema);

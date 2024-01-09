@@ -1,5 +1,5 @@
 const Article = require("../models/article");
-
+const multer = require('multer')
 /*exports.articleGet =  async(req,res)=>{
    // res.send('article gotten!')
    const articles = await Article.findOne(req.params.id)
@@ -7,6 +7,7 @@ const Article = require("../models/article");
 
    res.render('individarticle',{article:articles})
 }  */
+
 
 exports.articleGet = async (req, res) => {
   const articles = await Article.findOne(req.params.id);
@@ -49,24 +50,60 @@ exports.articleUpdate = async (req, res, next) => {
     console.log(error);
   }
 };
+const storage = multer.memoryStorage(); // Store file in memory as Buffer
+
+const upload = multer({ storage: storage });
+
 exports.articleCreate = async (req, res) => {
-  const { title, author, description, dateCreated,subDescription } = req.body;
+  const { title, author, description, dateCreated, subDescription,file } = req.body;
+ console.log(title);
+ console.log(file)
+ console.log('df')
   try {
     const article = new Article({
-      title: title, // Set the title property
-      author: author, // Add other properties as needed
-      description: description,
+      title: title,
+      author: author,
       dateCreated: dateCreated,
-      subDescription:subDescription
+      description: description,
+     
+      subDescription: subDescription,     //title.author.dateCreated.description.subDescription.file
+      image:file,
     });
-    // Save the article to the database
-    const savedArticle = await article.save();
- //   res.redirect('/')                           /*BAD FIX IT LATER*/
-    res.render("article", { message: "new test", article: savedArticle });
+    console.log(title);
+    console.log('fdfs')
+
+    upload.single('file')(req, res, async err => {
+      if (err) {
+        console.error(err);
+        return res.status(500).send('File upload error');
+      }
+      console.log('File uploaded successfully:', req.file);
+      // File uploaded successfully, update the article with image data
+      if (req.file) {
+        article.image.data = req.file.buffer;
+        article.image.contentType = req.file.mimetype;
+
+        article.description = req.body.description;
+        article.title = req.body.title;
+        article.author = req.body.author;
+        article.subDescription = req.body.subDescription;
+        article.dateCreated =  req.body.dateCreated;
+  
+        console.log("heres the logs")
+        //console.log(article)
+        console.log("heres the eend")
+      }
+
+      // Save the article to the database
+      const savedArticle = await article.save();
+
+      res.render('article', { message: 'new test', article: savedArticle });
+    });
+
+    // Handle file upload
     
   } catch (error) {
-    // Handle errors, for example, send an error response
-    res.status(500).send("Internal Server Error");
+    console.error(error);
+    res.status(500).send('Internal Server Error');
   }
-  
 };
