@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/stylesheets/index_style.css">
+    <style>
+        /* ... (existing styles) ... */
+
+        .header-left_icon {
+            display: flex;
+            width: 10px;
+        }
+
+        .header-left:hover .nav_wrapper {
+            display: block;
+        }
+
+        .nav_wrapper {
+            background-color: beige;
+            display: none;
+            position: absolute;
+            top: 50px; /* Adjust the top position based on your design */
+            z-index: 1;
+        }
+
+        .nav_col1 {
+            position: relative;
+        }
+
+        .nav_label {
+            cursor: pointer;
+        }
+
+        .nav_links {
+            list-style: none;
+            padding: 0;
+        }
+
+        .nav_links li {
+            padding: 10px;
+            cursor: pointer;
+        }
+
+        .nav_col1:hover .nav_links {
+            display: block;
+        }
+
+        .article-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 10px;
+        }
+
+        .article {
+            border: 2px solid black;
+            width: 300px;
+            padding: 10px;
+        }
+
+        img {
+            width: 100%;
+        }
+
+        p {
+            border: 2px solid red;
+        }
+    </style>
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="container">
+        <div class="header">
+            <div class="header-left">
+                <div>Read</div>
+                <div class="header-left_icon">
+                    <img src="/assets/downarrow.svg" alt="">
+                </div>
+                <!-- Added the following div for the dropdown menu -->
+                <div class="nav_wrapper">
+                    <div class="nav_col1">
+                        <h3 class="nav_label">Categories</h3>
+                        <ul class="nav_links">
+                            <li class="nav_link">Art</li>
+                            <li class="nav_link">Vacation</li>
+                            <li class="nav_link">Beach</li>
+                            <li class="nav_link">More Art</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div>Dezien</div>
+            <div class="header-right">
+                <div class="header-login">Login</div>
+                <img src="/assets/search.svg" alt="Search" style="width:15px">
+            </div>
+
+        </div>
+    </div>
+
+    <div class="nav_wrapper">
+
+    </div>
+
+    <div class="article-container">
+        <!-- Your articles go here -->
+        <div class="article">
+            <img src="article1.jpg" alt="Article 1">
+            <p>Article 1 content</p>
+        </div>
+        <!-- Repeat for other articles -->
+    </div>
+</body>
+
+</html>
