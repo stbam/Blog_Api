@@ -1,7 +1,7 @@
 const express = require("express");
 const app = express();
 const Article = require("./models/article");
-const multer = require("multer");
+
 
 
 const mongoose = require("mongoose");

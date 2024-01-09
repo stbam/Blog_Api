@@ -1,12 +1,44 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="/stylesheets/sign_style.css">
+  <link rel="stylesheet" href="/stylesheets/index_style.css">
+  <title></title>
 </head>
 <body>
-    
+    <%- include('_nav_bar') %>
+    <main class="auth_page_main">
+
+   
+    <div class="container" id="divisor">
+        <div class="policy-terms">
+            <p >By continuing, you agree to our <span class="terms" >User Agreement </span> and <span class="terms" >Privacy Policy</span>.</p>
+     
+        </div>
+        <form action="/article/login" method="POST">
+            <div id="divisor">
+                <label for="name">Name</label>
+                <input type="text" id="name" name="name" required>
+            </div>
+            <div id="divisor">
+                <label for="password">Password</label>
+                <input type="password" id="password" name="password" required>
+            </div>
+            <div class="buttons" id="divisor">
+                <button type="submit">Log In</button>
+                <div id="divisor">
+                 <span> Don't have an account? <a href="/article/sign-up"> <span class="terms"> Sign up</span></a></span> 
+                
+                </div>
+            
+            </div>
+      
+        </form>
+</div>
+</main>
+
+
+ 
 </body>
 </html>

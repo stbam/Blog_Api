@@ -2,6 +2,29 @@ const express = require("express");
 const router = express.Router();
 const articleController = require("../controllers/articleController");
 const Article = require("../models/article");
+const User = require("../models/user")
+
+
+router.get('/login',(req,res)=>{
+  res.render('login',{user:User})
+});
+router.get('/sign-up',(req,res)=>{
+  res.render('signup')
+})
+router.post('/register',(req,res)=>{
+  const {name,password}= req.body;
+  const user= new User({
+    name:name,
+    password:password,
+  })
+  user.name= req.body.name;
+  user.password=req.body.pasword;
+  
+  res.send("received");
+})
+router.post('/login',(req,res)=>{
+  res.redirect('/')
+})
 
 
 router.delete("/:id", articleController.articleDelete);
@@ -30,8 +53,6 @@ router.post("/create", articleController.articleCreate);
   res.render("individarticle");
 });*/
 //router.get("/article/individarticle/:id", articleController.articleGet)
-
-
 router.get("/", (req, res) => {
   res.render("article");
 });
