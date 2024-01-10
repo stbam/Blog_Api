@@ -5,7 +5,7 @@ const Article = require("./models/article");
 
 
 const mongoose = require("mongoose");
-mongoose.connect("mongodb://localhost:27017/newdb");
+mongoose.connect("mongodb+srv://stbacmtd:Stru5932@cluster0.jw02qwx.mongodb.net/?retryWrites=true&w=majority");
 
 app.use('/stylesheets', express.static('public/stylesheets'));
 app.use('/assets', express.static('assets'));
