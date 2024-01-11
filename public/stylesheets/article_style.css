@@ -1,12 +1,16 @@
+
 html{
    
 }
 
 .header{
-    display: flex; justify-content: space-between;padding: 20px; position: sticky; top:0px;background-color: white;
+    display: flex; justify-content: space-between;padding: 20px; position: sticky; top:0px;background-color: white;align-items: center;
 }
 .header-right{
-    display: flex; gap: 10px;
+    display: flex; gap: 10px;align-items: center;
+}
+#profile-pic{
+    width: 30px; border-radius: 40px; height: auto;
 }
 .header-login{
     padding: 5px; color: white; background-color: blueviolet; border-radius: 5px;cursor: pointer; user-select: none;
@@ -26,7 +30,9 @@ html{
 .nav_wrapper{
     background-color: beige; width: 100;display: none;
 }
-
+.type{
+    border-style: none; padding: 5px; color: white; background-color: blueviolet; border-radius: 5px;cursor: pointer; user-select: none;
+  }
 /**/
 
 

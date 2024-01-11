@@ -10,9 +10,30 @@
     <a href="/" style="color: black; text-decoration:none; ">Refra</a>
     <div class="header-right">
       
-        <a class="header-login" href="/article/login">Login</a>
+       
+     
+        <% if(user.name != "model" ) {%>
+            <div class="profile-content">
+                <img id="profile-pic" src="/assets/gigachad.png" alt="">
+                <h4 style="margin: 0px;"><%= user.name %></h4>
+            </div>
+        <form action="/article/logout" method="post">
+            <button class="type">Logout</button>
+        </form>
         
+        <%} else{ %>
+            <a class="header-login" href="/article/login">Login</a>
+     
+    
+            <%}%>
+    
+
+            
+
         <img src="/assets/search.svg" alt="Search"style="width:15px">
     </div>
     </div>
 
+    
+
+  

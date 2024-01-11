@@ -11,7 +11,14 @@ router.get('/login',(req,res)=>{
   res.render('login',{user:User})
 });
 router.get('/signup',(req,res)=>{
-  res.render('signup')
+try {
+  
+  res.render('signup',{user:User})
+
+} catch (error) {
+  
+}
+  
 
 
 })
@@ -62,15 +69,30 @@ router.post('/logout', (req, res) => {
 router.delete("/:id", articleController.articleDelete);
 
 router.get("/create", (req, res) => {
+  
   res.render("article");
 });
 
 router.get("/individarticle/:id", async(req, res) => { 
-  const article = await Article.findById(req.params.id);
-
+  try{
+    const article = await Article.findById(req.params.id);
+    const user = req.user;
+  console.log(req.name) 
   console.log(article)
-  res.render("individarticle",{input:article});
+  res.render("individarticle",{input:article,user:user});
+  }catch(error){
+  }
+  
 });
+
+
+
+
+
+
+
+
+
 
 
 router.get("/edit", articleController.articleGet);

@@ -9,19 +9,7 @@
     <script src="https://cdn.tiny.cloud/1/no-api-key/tinymce/6/tinymce.min.js" referrerpolicy="origin"></script>
 </head>
 <body >
-  
-   <% console.log(user) %>
-    <% if(user) {%>
-    <h1>Welcome back <%= user.name %></h1>
-    <form action="/article/logout" method="post">
-        <button class="type">submit</button>
-    </form>
-    <a href="/article/logout">LOG OUT</a>
-    <%} else{ %>
 
- 
-    <h1>Not logged in</h1>
-        <%}%>
         
     <%- include('_nav_bar') %>
     
