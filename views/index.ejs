@@ -48,7 +48,13 @@
 
                             <form action="/article/<%=article.id%>?_method=DELETE" method="post"> <!--?_method=DELETE-->
                                 <input type="hidden" name="_method" value="DELETE">
+                            
+                               <% if(user.admin=="true") {%>
                                 <button type="submit">delete</button>
+                               <% } else { %>
+                                
+                                <%}%>
+                               
                             </form>
         
                     <!--
@@ -62,7 +68,12 @@
             </a>
             <% }) %>
         </div>
+        <% if(user.admin=="true") {%>
         </div><a href="/article/create">Create article</a>
+           <% } else { %>
+            
+            <%}%>
+       
     </div>
 
 

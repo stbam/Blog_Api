@@ -34,8 +34,13 @@
                 
               
                 <br>
-              
-                <a href="/article/edit"><button>Update</button></a>
+                <% if(user.admin=="true") {%>
+                    <a href="/article/edit"><button>Update</button></a>
+                   <% } else { %>
+                    
+                    <%}%>
+
+                
             
                 <a href="/">Go Back</a>
             </div>

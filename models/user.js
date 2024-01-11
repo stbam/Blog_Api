@@ -9,5 +9,9 @@ const userSchema = new mongoose.Schema({
     type: String,
     require: true,
   },
+  admin: {
+    type: String, 
+    required: true
+  },
 });
 module.exports = mongoose.model('User',userSchema);

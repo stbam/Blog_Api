@@ -34,6 +34,7 @@ router.post('/signup', async (req,res,next)=>{
       const user = new User({
         name: req.body.username,
         password: hashedPassword,
+        admin:false
       });
      
       // Save the user with the hashed password
