@@ -5,7 +5,7 @@ const multer = require('multer')
    const articles = await Article.findOne(req.params.id)
    
 
-   res.render('individarticle',{aticle:articles
+   res.render('individarticle',{article:articles})
 }  */
 
 
@@ -32,8 +32,11 @@ exports.articleDelete = async (req, res) => {
 //dateCreated,description,published
 
 exports.articleUpdate = async (req, res, next) => {
-  let article = await Article.findById(req.params.id);
+
+ 
   try {
+    console.log(req.body._id + 'update')
+    let article = await Article.findById(req.params.id);
     article.title = req.body.title;
     article.description = req.body.description;
     article.author= req.body.author;

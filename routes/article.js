@@ -2,7 +2,7 @@ const express = require("express");
 const router = express.Router();
 const articleController = require("../controllers/articleController");
 const Article = require("../models/article");
-const bcrypt = require('bcrypt');
+const bcrypt = require('bcryptjs');
 const User = require("../models/user")
 const passport = require("passport");
 
@@ -34,7 +34,7 @@ router.post('/signup', async (req,res,next)=>{
       const user = new User({
         name: req.body.username,
         password: hashedPassword,
-        admin:false
+        admin:false,
       });
      
       // Save the user with the hashed password
