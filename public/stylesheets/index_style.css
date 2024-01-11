@@ -1,6 +1,9 @@
 * {
     margin: 0; padding: 0; box-sizing: border-box;
 }
+body{
+    display: block;
+}
 .header{
     display: flex; justify-content: space-between;padding: 20px; position: sticky; top:0px;background-color: white;
 }
@@ -22,14 +25,14 @@
 .nav_wrapper{
     background-color: beige; width: 100;display: none;
 }
-.container{
-    
-}
+
+
+
 .arrowimg{
     width:15px
 }
 .article-container{
-    display:flex; flex-wrap: wrap; justify-content: center; gap: 10px;
+    display:flex; flex-wrap: wrap; justify-content: center; gap: 10px;padding-top: 20px;
 }
 a{
     text-decoration: none;

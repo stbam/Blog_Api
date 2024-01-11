@@ -19,17 +19,23 @@
   },
   "homepage": "https://github.com/stbam/Blog_Api#readme",
   "dependencies": {
+    "bcrypt": "^5.1.1",
+    "connect-flash": "^0.1.1",
     "cors": "^2.8.5",
     "ejs": "^3.1.9",
     "ejs-lint": "^2.0.0",
     "express": "^4.18.2",
+    "express-session": "^1.17.3",
     "luxon": "^3.4.4",
     "method-override": "^3.0.0",
     "mongodb": "^6.3.0",
     "mongoose": "^8.0.3",
     "multer": "^1.4.4",
     "multer-gridfs-storage": "^5.0.2",
-    "nodemon": "^3.0.2"
+    "nodemon": "^3.0.2",
+    "passport": "^0.7.0",
+    "passport-local": "^1.0.0",
+    "session": "^0.1.0"
   },
   "devDependencies": {
     "prettier": "3.1.1"

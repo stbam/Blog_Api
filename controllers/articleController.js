@@ -5,7 +5,7 @@ const multer = require('multer')
    const articles = await Article.findOne(req.params.id)
    
 
-   res.render('individarticle',{article:articles})
+   res.render('individarticle',{aticle:articles
 }  */
 
 
