@@ -1,5 +1,6 @@
 const Article = require("../models/article");
 const multer = require('multer')
+const User = require("../models/user")
 /*exports.articleGet =  async(req,res)=>{
    // res.send('article gotten!')
    const articles = await Article.findOne(req.params.id)
@@ -10,9 +11,9 @@ const multer = require('multer')
 
 
 exports.articleGet = async (req, res) => {
-  const articles = await Article.findOne(req.params.id);
-console.log('test')
-  res.render("edit", { article: articles });
+  const articles = await Article.findById(req.params.id);
+//console.log('test')
+  res.render("edit", { article: articles , user:User});
 };
 
 exports.articleDelete = async (req, res) => {
@@ -30,23 +31,21 @@ exports.articleDelete = async (req, res) => {
 };
 
 //dateCreated,description,published
-
 exports.articleUpdate = async (req, res, next) => {
-
- 
   try {
-    console.log(req.body._id + 'update')
+   // console.log(req.user._id +"here here ")
+   const articles = await Article.findById(req.params.id);
+  console.log(articles + 'here is the awaited id ')
+   //console.log(req.articles + " article id")
+    const store_id= req.user._id;
+   // console.log(req.body._id + 'update')
     let article = await Article.findById(req.params.id);
     article.title = req.body.title;
     article.description = req.body.description;
     article.author= req.body.author;
     article.dateCreated = req.body.dateCreated;
     //article.dateCreated = req.body.dateCreated;
-   
-
-
-    console.log(article + "update");
-
+    console.log(article._id + " update");
     article.save();
     res.redirect("/");
   } catch (error) {

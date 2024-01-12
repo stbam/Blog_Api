@@ -23,7 +23,7 @@ try {
 
 })
 router.post('/signup', async (req,res,next)=>{
-  console.log(req.body.username)
+  //console.log(req.body.username)
   try {
     // Hash the user's password
     bcrypt.hash(req.body.password, 10, async (err, hashedPassword) => {
@@ -78,8 +78,8 @@ router.get("/individarticle/:id", async(req, res) => {
   try{
     const article = await Article.findById(req.params.id);
     const user = req.user;
-  console.log(req.name) 
-  console.log(article)
+  //console.log(req.name) 
+  //console.log(article)
   res.render("individarticle",{input:article,user:user});
   }catch(error){
   }
@@ -96,7 +96,7 @@ router.get("/individarticle/:id", async(req, res) => {
 
 
 
-router.get("/edit", articleController.articleGet);
+router.get("/edit/:id", articleController.articleGet);
 
 router.put("/edit/:id", articleController.articleUpdate);
 

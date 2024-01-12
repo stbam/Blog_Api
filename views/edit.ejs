@@ -1,25 +1,58 @@
-<!--edit-->
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="/stylesheets/sign_style.css">
+  <link rel="stylesheet" href="/stylesheets/index_style.css">
+  <title></title>
 </head>
 <body>
-        <div>
-            <h1>Edit</h1>
-            
-            <div>
-                <form action="/article/edit/<%= article.id  %>?_method=PUT" method="POST">
-                    <input type="hidden" name="_method" value="PUT">
-                    <%- include('_form_fields') %>
-                </form>
-                
-                
+    <%- include('_nav_bar') %>
+    <main class="auth_page_main">
+
+   
+    <div class="container" id="divisor">
+        <div class="policy-terms">
+            <p >By continuing, you agree to our <span class="terms" >User Agreement </span> and <span class="terms" >Privacy Policy</span>.</p>
+     
+        </div>
+        <form action="/article/edit/<%= article.id%>?_method=PUT" method="POST">
+            <div id="divisor">
+                <label for="title">title:</label>
+                <input type="text" name="title" id="title">  
             </div>
-         </div>
-         <a href="/">Homepage</a>
+            <div id="divisor">
+                <label for="description">description:</label>
+                <input type="text" name="description" id="description">
+            </div>
+             
+            <div id="divisor">
+                <label for="author">author:</label>
+                <input type="text" name="author" id="author">
+            </div>
+            <div id="divisor">
+                <label for="dateCreated">date created</label>
+                <input type="date" name="dateCreated">
+            </div>
+            <div id="divisor">
+                <label for="id"></label>
+                <input type="text" name="id" id="id">
+            </div>
+
+            <div class="buttons" id="divisor">
+                <button type="submit">Edits</button>
+                <div id="divisor">
+                 <span> Return Home? <a href="/"> <span class="terms"> Click Here</span></a></span> 
+                
+                </div>
+            
+            </div>
+      
+        </form>
+</div>
+</main>
+
+
+ 
 </body>
 </html>
