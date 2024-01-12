@@ -8,13 +8,12 @@
 </head>
 <body>
     <%- include('_nav_bar') %>
-    <main class="auth_page_main">
-
-   
     <div class="container" id="divisor">
         <div class="policy-terms">
           <h1>Create an Article</h1>
         </div>
+        
+    <main class="auth_page_main">
 
         <form action="/article/create" method="POST" enctype="multipart/form-data">
             <div id="divisor">
@@ -45,7 +44,7 @@
                 <label for="file">File:</label>
                 <input type="file" name="file" > 
             </div>
-            
+
             <div id="divisor">
                 <label for="genre">Genre:</label>
                 <input type="genre" name="genre" > 
