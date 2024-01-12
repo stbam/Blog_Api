@@ -2,8 +2,11 @@
 body{
     display: block;
 }
+.Heading{
+  font-family: 'Courier New', Courier, monospace;font-size: 40px;
+}
 .header{
-    display: flex; justify-content: space-between;padding: 20px; position: sticky; top:0px;background-color: white; align-items: center;
+    display: flex; height: 70px; justify-content: space-between;padding: 20px; position: sticky; top:0px;background-color: white; align-items: center;z-index: 1;
 }
 .header-right{
     display: flex; gap: 10px; align-items: center;
@@ -18,8 +21,9 @@ body{
     padding: 5px; color: white; background-color: blueviolet; border-radius: 5px;cursor: pointer; user-select: none;border-style: none;
 }
 .header-left{
-    display: flex;  align-items: center; gap: 7px;
+    display: flex;  align-items: center; gap: 7px;cursor: pointer;
 }
+
 .header-left_icon{
     display: flex;  width:10px
 }
@@ -65,3 +69,7 @@ img{
 p{
    /* border: 2px solid red;*/
 }
+
+/*drop down */
+
+

@@ -1,30 +1,25 @@
 <div class="header">
-    <div class="header-left">
+    <div class="header-left" onclick="myFunction()" id="header-dropdown">
         <div>Read</div>
         <div class="header-left_icon">
             <img class="arrowimg" src="/assets/downarrow.svg" alt=""  >
         </div>
+        
     </div>
-    
-    
-    <a href="/" style="color: black; text-decoration:none; ">Refra</a>
+
+    <a class="Heading" href="/" style="color: black; text-decoration:none; ">Refra</a>
     <div class="header-right">
-      
-       
-     
         <% if(user.name != "model" ) {%>
             <div class="profile-content">
                 <img id="profile-pic" src="/assets/gigachad.png" alt="">
                 <h4 style="margin: 0px;"><%= user.name %></h4>
             </div>
+            
         <form action="/article/logout" method="post">
             <button class="type">Logout</button>
-        </form>
-        
+        </form> 
         <%} else{ %>
             <a class="header-login" href="/article/login">Login</a>
-     
-    
             <%}%>
     
 
@@ -34,6 +29,3 @@
     </div>
     </div>
 
-    
-
-  
