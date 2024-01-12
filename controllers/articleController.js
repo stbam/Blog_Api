@@ -57,7 +57,7 @@ const storage = multer.memoryStorage(); // Store file in memory as Buffer
 const upload = multer({ storage: storage });
 
 exports.articleCreate = async (req, res) => {
-  const { title, author, description, dateCreated, subDescription,file } = req.body;
+  const { title, author, description, dateCreated, subDescription,file,genre } = req.body;
  console.log(title);
  console.log(file)
  console.log('df')
@@ -67,9 +67,9 @@ exports.articleCreate = async (req, res) => {
       author: author,
       dateCreated: dateCreated,
       description: description,
-     
       subDescription: subDescription,     //title.author.dateCreated.description.subDescription.file
       image:file,
+      genre:genre,
     });
     console.log(title);
     console.log('fdfs')
@@ -90,7 +90,8 @@ exports.articleCreate = async (req, res) => {
         article.author = req.body.author;
         article.subDescription = req.body.subDescription;
         article.dateCreated =  req.body.dateCreated;
-  
+        article.genre =  req.body.genre;
+        
         console.log("heres the logs")
         //console.log(article)
         console.log("heres the eend")
@@ -99,7 +100,8 @@ exports.articleCreate = async (req, res) => {
       // Save the article to the database
       const savedArticle = await article.save();
 
-      res.render('article', { message: 'new test', article: savedArticle });
+      res.render('article', { message: 'new test', article: savedArticle, user:User });
+
     });
 
     // Handle file upload

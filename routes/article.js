@@ -71,7 +71,7 @@ router.delete("/:id", articleController.articleDelete);
 
 router.get("/create", (req, res) => {
   
-  res.render("article");
+  res.render("article", {user:User});
 });
 
 router.get("/individarticle/:id", async(req, res) => { 

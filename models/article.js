@@ -30,6 +30,10 @@ const articleSchema = new mongoose.Schema({
   image: {
     data: Buffer,
     contentType: String,
+  },
+  genre:{
+    type: String,
+    required: true,
   } 
   
 });

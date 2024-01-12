@@ -1,42 +1,75 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  
-    <title>Document</title>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="/stylesheets/sign_style.css">
+  <link rel="stylesheet" href="/stylesheets/index_style.css">
+  <title></title>
 </head>
 <body>
-     <!--title,author,dateCreated,description-->
-        <h1>Edit Document</h1>
-    <form action="/article/create" method="POST" enctype="multipart/form-data">
-        <label for="title">Title</label>
-        <input type="text" name="title" id="title"  required> <br>
-    
-        <label for="author">Author</label>           
-        <input type="text" name="author" id="author" required><br>
-    
-        <label for="dateCreated">Date</label>
+    <%- include('_nav_bar') %>
+    <main class="auth_page_main">
+
+   
+    <div class="container" id="divisor">
+        <div class="policy-terms">
+          <h1>Create an Article</h1>
+        </div>
+
+        <form action="/article/create" method="POST" enctype="multipart/form-data">
+            <div id="divisor">
+                <label for="title">Title</label>
+        <input type="text" name="title" id="title"  required> 
+            </div>
+            <div id="divisor">
+                <label for="author">Author</label>           
+                <input type="text" name="author" id="author" required><br>
+               
+            </div>
+
+            <div id="divisor">
+                <label for="dateCreated">Date</label>
         <input type="date" name="dateCreated" id="dateCreated" required><br>
-    
-        <label for="description">Description</label>
-        <input type="text" name="description" id="description"   required><br>
-        
-        <label for="subDescription">Sub Description</label>
-        <input type="text" name="subDescription" id="subDescription">
+            </div>
 
-        <label for="file">File:</label>
-        <input type="file" name="file" >
+            <div id="divisor">
+                <label for="description">Description</label>
+                <textarea name="description" id="description" cols="30" rows="10"></textarea>
+            </div>
+
+            <div id="divisor">
+                <label for="subDescription">Sub Description</label>
+                <textarea name="subDescription" id="subDescription" cols="10" rows="10"></textarea>
+            </div>
+            <div id="divisor">
+                <label for="file">File:</label>
+                <input type="file" name="file" > 
+            </div>
+            
+            <div id="divisor">
+                <label for="genre">Genre:</label>
+                <input type="genre" name="genre" > 
+            </div>
+
+            <div id="divisor">              
+            </div>
+            <div class="buttons" id="divisor">
+
+
+                <button type="submit">Submit</button>
+
+                <div id="divisor">
+                 <span> <a href="/article/signup"> <span class="terms"> Return to Blog</span></a></span> 
+                
+                </div>
+            
+            </div>
       
+        </form>
+</div>
+</main>
 
-        <button type="submit">Submit</button>
-    </form>
-    
-    <a href="/">Homepage</a>
-    
+
+ 
 </body>
-<script>
-  
-</script>
 </html>

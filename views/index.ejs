@@ -41,7 +41,7 @@
                 <a href="/article/individarticle/<%=article.id%>">
                 <div class="article">
                     <img src="data:<%= article.image.contentType %>;base64,<%= article.image.data.toString('base64') %>" alt="">
-                    <h4 class="sub-heading">Travel</h4>
+                    <h4 class="sub-heading"><%=article.genre%></h4>
                     <div class="heading-content">
                             <h4 class="title-content"><%=article.title%> </h4>
                              <h5 class="subDescription-content"><%=article.subDescription%> </h5>
